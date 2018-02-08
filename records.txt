@@ -1,0 +1,36 @@
+
+     1. cocos2d 电子书网址：
+                  https://6so.so/search.php?mod=forum&searchid=265&orderby=lastpost&ascdesc=desc&searchsubmit=yes&kw=cocos2d
+
+
+
+      2.so.so奥学  自学网           --              脚本之家下载 cocos unity 等教材书
+
+
+      3. attackButton.isBright()
+         attackButton.setBright(true)
+         attackButton.setTouchEnabled(true)
+
+
+
+        frameAnimationScene = ccs.load(res.frame_animation_json).node;
+        shark = ccs.load(res.shark_json).action;
+        frameAnimationScene.runAction(shark);
+
+
+        shark.play("DAttack",false);
+        self.changeButtonBright();
+
+
+
+        var anim = new cc.Animation();
+        anim.setDelayPerUnit(0.1);
+        for (var i = beginNum; i <= EndNum; i++)
+        {
+            anim.addSpriteFrameWithFile("res/boom"+i+".png")
+        }
+
+        var sp = new cc.Sprite();
+        sp.setPosition(pos);
+        this.addChild(sp);
+        sp.runAction(cc.sequence(cc.animate(anim), cc.fadeOut(0.2)));
